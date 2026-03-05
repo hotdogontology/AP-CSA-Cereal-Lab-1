@@ -14,6 +14,7 @@ public class Cereal
     // accessor methods for each instance variable
 
     /* toString method returns the values stored in the instance variables
-       concatenated in a sentence starting with "Cereal: "
+       concatenated in a sentence starting with "Cereal: " */
 
 }
+
