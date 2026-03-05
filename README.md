@@ -1,12 +1,27 @@
 
-# Unit 3 - If Statements and Booleans
+# Cereal Lab 1 - ArrayLists and File Reading
 
-This project is designed for AP CS-A, focusing on Unit 3 concepts such as conditional statements, Boolean expressions, and logical operators. The project includes a set of methods that students need to implement, along with unit tests to verify their functionality.
+This project is designed for AP CS-A, focusing on reading in files and using ArrayLists. The lab is based on the Cereal Lab provided by College Board on AP Classroom.
+
+## Directions
+
+You have created a class from a given description or specification several times. This capability is an important skill, but equally important is the ability to determine which information is essential when creating a class. What is “essential” can vary based on perspective or can be determined by a question being asked or a problem that someone is attempting to solve. This activity will give you an opportunity to practice making this type of determination. Consider the following selection.
+
+<img width="587" height="397" alt="image" src="https://github.com/user-attachments/assets/16400c15-c49c-4c95-84c5-bf8ec4b546de" />
+
+[https://www.kaggle.com/crawford/80-cereals/version/2#cereal.csv]
+
+This table of cereal data is publicly available on Kaggle.com. Each row in the table is a record representing a different breakfast cereal you would commonly find in the grocery store and contains data about that cereal, including name, type (hot or cold), calories, protein, fat, sodium, fiber, carbohydrates, sugar, potassium, vitamins, shelf, weight, cups, and rating. This table contains more information than we need to answer the questions posed in this activity.
+
+You have been given a file called cerealSubset.csv that contains the data deemed “essential” for this lab. The file contains the name, calories, fiber, carbohydrates, and cups for 76 different cereals.  Write the Cereal class with appropriate instance variables, a constructor, accessor methods for each instance variable, and a toString() method to display all the data for a Cereal object.
+
+Once you have designed and written the **`Cereal`** class to represent a Cereal object, you will want to write a program to process the data. Processing the data will include reading each data entry from a file. You will create another class, **`CerealRunner`**, to read in a data set of cereal information to analyze the nutrition facts of a group of cereals. The `CerealRunner` class should have a private instance variable to store an ArrayList of Cereal objects. You will use a Scanner object to read the data from `cerealSubset.csv` into a String for each line. You’ll then parse, or split, the data into an array of Strings using the split() method from the String class. You will then use the elements of that array to create Cereal objects and store them into your ArrayList. Recall that the array of Strings must be cast to the data types expected in the Cereal class. When `CerealRunner.java` is run, the output should print “76 records created.”.
 
 ## Project Structure
 
-- **`Unit3.java`**: Contains method headers and task descriptions. Students are required to implement the method bodies.
-- **`Unit3Test.java`**: JUnit test cases for each method in `Unit3.java`. These tests validate the correctness of the implemented methods.
+- **`cerealSubset.csv`**: A file that contains the name, calories, fiber, carbohydrates, and cups for 76 different cereals.  
+- **`Cereal.java`**, **`CerealRunner.java`**: Contains class file stubs. Students are required to complete these classes and the appropriate methods.
+- **`CerealTest.java`**, **`CerealRunnerTest.java`**: JUnit test cases for each method in `Cereal.java` and `CerealRunner.java`. These tests validate the correctness of the implemented methods.
 - **`pom.xml`**: Maven configuration file that manages dependencies and plugins required to build and run the project.
 
 ## Prerequisites for Local Work
@@ -26,9 +41,10 @@ Use link found in Canvas to accept in GitHub Classroom. You may have to check yo
 
 Open the repository in GitHub Codespaces. (Or clone to your local machine and use your preferred IDE.)
 
-### Complete the Methods
+### Write the Class Files
 
-Write the required code for the methods as described by each problem.
+- Complete the `Cereal.java` class file.
+- Complete the `CerealRunner.java` class file.
 
 ### Run Tests
 
@@ -37,25 +53,6 @@ Run the JUnit tests to verify your implementations
 ### Push Work to the Repository
 
 When your code passes all tests, Commit and Sync to push your answers to the Repo for submission.
-
-## Method Descriptions
-
-Students need to implement the following methods in `Unit3.java`:
-
-1. **`isPositive(int number)`**: Returns `true` if the number is positive, otherwise `false`.
-2. **`isWithinRange(int number, int lower, int upper)`**: Returns `true` if the number is within the specified range (inclusive).
-3. **`isLeapYear(int year)`**: Determines if a year is a leap year based on given rules.
-4. **`areBothSameSign(int number1, int number2)`**: Checks if both numbers have the same sign (either positive or negative).
-5. **`containsSubstring(String main, String sub)`**: Returns `true` if the main string contains the substring and both are not empty.
-6. **`reversePhoneNumber(int phoneNumber)`**: Reverses the given phone number using modulo operations.
-
-## Common Mistakes to Avoid
-
-- Using `=` instead of `==` in conditionals.
-- Ending `if` statements with a semicolon (`;`).
-- Using multiple `if` statements when `if-else` would be more appropriate.
-- Misunderstanding the use of logical operators (`&&`, `||`).
-- Failing to apply short-circuit evaluation correctly.
 
 ## Grading
 Your grade will be based on the correctness of your implementations as verified by the unit tests. Make sure all methods are completed and that all tests pass.
@@ -67,4 +64,4 @@ Remember to adhere to the GSSM Academic Integrity Policy. Do not copy code from 
 If you have any questions or need assistance, send me an email or come to office hours. 
 
 ## Acknowledgements
-This project has been adapted from the repo generously shared by [Kevin Hare](https://csplusplus.com/).
+This project has been adapted from the cereal lab available on AP Classroom by College Board.
