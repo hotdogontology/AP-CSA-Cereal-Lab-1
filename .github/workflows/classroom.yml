@@ -1,80 +1,67 @@
-name: Autograding Tests
+name: autograding tests
 'on':
 - push
 - repository_dispatch
+
 permissions:
   checks: write
   actions: read
   contents: read
+
 jobs:
   run-autograding-tests:
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
     steps:
-    - name: Checkout code
+    - name: checkout code
       uses: actions/checkout@v4
-    - name: testIsPositive
-      id: testispositive
+
+    - name: constructor_and_getters_work
+      id: constructor_and_getters_work
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: testIsPositive
-        setup-command: mvn compile
-        command: mvn -Dtest=Unit3Test#testIsPositive test
-        timeout: 10
+        test-name: constructor_and_getters_work
+        setup-command: mvn -q -DskipTests compile
+        command: mvn -q -Dtest=CerealTest#constructor_and_getters_work test
+        timeout: 20
         max-score: 10
-    - name: testIsWithinRange
-      id: testiswithinrange
+
+    - name: toString_contains_expected_fields
+      id: tostring_contains_expected_fields
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: testIsWithinRange
-        setup-command: mvn compile
-        command: mvn -Dtest=Unit3Test#testIsWithinRange test
-        timeout: 10
+        test-name: toString_contains_expected_fields
+        setup-command: mvn -q -DskipTests compile
+        command: mvn -q -Dtest=CerealTest#toString_contains_expected_fields test
+        timeout: 20
+        max-score: 10
+
+    - name: runner_creates_same_number_of_records_as_csv
+      id: runner_creates_same_number_of_records_as_csv
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: runner_creates_same_number_of_records_as_csv
+        setup-command: mvn -q -DskipTests compile
+        command: mvn -q -Dtest=CerealRunnerTest#runner_creates_same_number_of_records_as_csv test
+        timeout: 20
         max-score: 15
-    - name: testIsLeapYear
-      id: testisleapyear
+
+    - name: runner_parses_values_correctly_for_a_few_rows
+      id: runner_parses_values_correctly_for_a_few_rows
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: testIsLeapYear
-        setup-command: mvn compile
-        command: mvn -Dtest=Unit3Test#testIsLeapYear test
-        timeout: 10
-        max-score: 20
-    - name: testAreBothSameSign
-      id: testarebothsamesign
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: testAreBothSameSign
-        setup-command: mvn compile
-        command: mvn -Dtest=Unit3Test#testAreBothSameSign test
-        timeout: 10
+        test-name: runner_parses_values_correctly_for_a_few_rows
+        setup-command: mvn -q -DskipTests compile
+        command: mvn -q -Dtest=CerealRunnerTest#runner_parses_values_correctly_for_a_few_rows test
+        timeout: 20
         max-score: 15
-    - name: testContainsSubstring
-      id: testcontainssubstring
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: testContainsSubstring
-        setup-command: mvn compile
-        command: mvn -Dtest=Unit3Test#testContainsSubstring test
-        timeout: 10
-        max-score: 20
-    - name: testReversePhoneNumber
-      id: testreversephonenumber
-      uses: classroom-resources/autograding-command-grader@v1
-      with:
-        test-name: testReversePhoneNumber
-        setup-command: mvn compile
-        command: mvn -Dtest=Unit3Test#testReversePhoneNumber test
-        timeout: 10
-        max-score: 20
-    - name: Autograding Reporter
+
+    - name: autograding reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TESTISPOSITIVE_RESULTS: "${{steps.testispositive.outputs.result}}"
-        TESTISWITHINRANGE_RESULTS: "${{steps.testiswithinrange.outputs.result}}"
-        TESTISLEAPYEAR_RESULTS: "${{steps.testisleapyear.outputs.result}}"
-        TESTAREBOTHSAMESIGN_RESULTS: "${{steps.testarebothsamesign.outputs.result}}"
-        TESTCONTAINSSUBSTRING_RESULTS: "${{steps.testcontainssubstring.outputs.result}}"
-        TESTREVERSEPHONENUMBER_RESULTS: "${{steps.testreversephonenumber.outputs.result}}"
+        CONSTRUCTOR_AND_GETTERS_WORK_RESULTS: "${{steps.constructor_and_getters_work.outputs.result}}"
+        TOSTRING_CONTAINS_EXPECTED_FIELDS_RESULTS: "${{steps.tostring_contains_expected_fields.outputs.result}}"
+        RUNNER_CREATES_SAME_NUMBER_OF_RECORDS_AS_CSV_RESULTS: "${{steps.runner_creates_same_number_of_records_as_csv.outputs.result}}"
+        RUNNER_PARSES_VALUES_CORRECTLY_FOR_A_FEW_ROWS_RESULTS: "${{steps.runner_parses_values_correctly_for_a_few_rows.outputs.result}}"
       with:
-        runners: testispositive,testiswithinrange,testisleapyear,testarebothsamesign,testcontainssubstring,testreversephonenumber
+        runners: constructor_and_getters_work,tostring_contains_expected_fields,runner_creates_same_number_of_records_as_csv,runner_parses_values_correctly_for_a_few_rows
