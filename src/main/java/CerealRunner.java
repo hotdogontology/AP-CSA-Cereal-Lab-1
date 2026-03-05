@@ -45,7 +45,8 @@ public class CerealRunner
 
     public static void main(String[] args)
     {
-        String fileName = "cerealSubset.csv";
+        String fileName = "../data/cerealSubset.csv";
         CerealRunner cr = new CerealRunner(fileName);
     }
+
 }
