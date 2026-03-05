@@ -8,6 +8,7 @@
 public class Cereal
 {
     // private instance variables to hold info about a cereal from the data set
+    // the name, calories, fiber, carbohydrates, and cups
 
     // constructor that creates a cereal object
 
@@ -17,4 +18,5 @@ public class Cereal
        concatenated in a sentence starting with "Cereal: " */
 
 }
+
 
