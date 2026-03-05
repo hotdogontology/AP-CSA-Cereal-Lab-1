@@ -24,13 +24,6 @@ Once you have designed and written the **`Cereal`** class to represent a Cereal 
 - **`CerealTest.java`**, **`CerealRunnerTest.java`**: JUnit test cases for each method in `Cereal.java` and `CerealRunner.java`. These tests validate the correctness of the implemented methods.
 - **`pom.xml`**: Maven configuration file that manages dependencies and plugins required to build and run the project.
 
-## Prerequisites for Local Work
-
-- Java 17 (or compatible version)
-- Maven 3.x
-
-You can also use Codespaces and the environment will load the required packages automatically upon prompt.
-
 ## Instructions
 
 ### Accept the Project
@@ -62,6 +55,13 @@ Remember to adhere to the GSSM Academic Integrity Policy. Do not copy code from 
 
 ## Contact
 If you have any questions or need assistance, send me an email or come to office hours. 
+
+## Prerequisites for Local Work
+
+- Java 17 (or compatible version)
+- Maven 3.x
+
+You can also use Codespaces and the environment will load the required packages automatically upon prompt.
 
 ## Acknowledgements
 This project has been adapted from the cereal lab available on AP Classroom by College Board.
