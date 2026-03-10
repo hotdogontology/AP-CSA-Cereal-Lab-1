@@ -3,7 +3,7 @@
 
 This project is designed for AP CS-A, focusing on reading in files and using ArrayLists. The lab is based on the Cereal Lab provided by College Board on AP Classroom.
 
-## Directions
+## Lab Directions and Prompt
 
 You have created a class from a given description or specification several times. This capability is an important skill, but equally important is the ability to determine which information is essential when creating a class. What is “essential” can vary based on perspective or can be determined by a question being asked or a problem that someone is attempting to solve. This activity will give you an opportunity to practice making this type of determination. Consider the following selection.
 
@@ -24,7 +24,7 @@ Once you have designed and written the **`Cereal`** class to represent a Cereal 
 - **`CerealTest.java`**, **`CerealRunnerTest.java`**: JUnit test cases for each method in `Cereal.java` and `CerealRunner.java`. These tests validate the correctness of the implemented methods.
 - **`pom.xml`**: Maven configuration file that manages dependencies and plugins required to build and run the project.
 
-## Instructions
+## Workflow Instructions
 
 ### Accept the Project
 
